@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    devise-track_locale (0.1.0)
+    devise-track_locale (0.2.0)
       devise (> 3.0)
 
 GEM
