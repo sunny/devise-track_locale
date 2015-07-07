@@ -8,7 +8,7 @@ describe Devise::Models::TrackLocale do
   describe "#set_locale!" do
     let(:model) { MockModel.new }
     before do
-      allow(model).to receive(:update_attribute)
+      allow(model).to receive(:update_column)
       allow(model).to receive(:locale) { "en" }
     end
 
@@ -17,7 +17,7 @@ describe Devise::Models::TrackLocale do
         model.set_locale!
       end
 
-      expect(model).to have_received(:update_attribute).with(:locale, "fr")
+      expect(model).to have_received(:update_column).with(:locale, "fr")
     end
 
     it "does not change the model if the locale is the same" do
@@ -25,7 +25,7 @@ describe Devise::Models::TrackLocale do
         model.set_locale!
       end
 
-      expect(model).not_to have_received(:update_attribute)
+      expect(model).not_to have_received(:update_column)
     end
   end
 end
