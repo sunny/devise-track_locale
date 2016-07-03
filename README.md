@@ -17,6 +17,15 @@ gem "devise-track_locale"
 Usage
 -----
 
+Add a `locale` attribute to your users:
+
+```sh
+$ rails g migration AddLocaleToUsers locale
+$ rake db:migrate
+```
+
+### Save the locale on every sign-in
+
 In your model, add `:track_locale` as a devise module:
 
 ```rb
@@ -25,11 +34,14 @@ class User < ActiveRecord::Base
 end
 ```
 
-Add a `locale` attribute to your users:
+### Save the locale only once
 
-```sh
-$ rails g migration AddLocaleToUsers locale
-$ rake db:migrate
+In your model, add `:track_default_locale` as a devise module:
+
+```rb
+class User < ActiveRecord::Base
+  devise …, :track_default_locale
+end
 ```
 
 Copyright
