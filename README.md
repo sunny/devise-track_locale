@@ -7,10 +7,10 @@ remembering a user's last locale.
 Installation
 -----------
 
-Add the gem to your Gemfile:
+Add the folling lines to your Gemfile:
 
 ```rb
-gem "devise"
+# Remember the locale on user visits
 gem "devise-track_locale"
 ```
 
